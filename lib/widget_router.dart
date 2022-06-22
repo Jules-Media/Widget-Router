@@ -1,7 +1,7 @@
 library widget_router;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+/// Import this File to access the Widget Router
+/// Package
+
+export 'src/router.dart';
+export 'src/routes.dart';
