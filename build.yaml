@@ -1,0 +1,10 @@
+builders:
+  source_gen:
+    import: "package:widget_router/widget_router.dart"
+    builder_factories: ["build"]
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen"]
+    #options:
+    build_extensions:
+      "^lib/{{}}.dart": ["lib/generated/{{}}.g.dart"]
