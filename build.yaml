@@ -1,10 +1,13 @@
-builders:
-  source_gen:
-    import: "package:widget_router/widget_router.dart"
-    builder_factories: ["build"]
-    auto_apply: dependents
-    build_to: cache
-    applies_builders: ["source_gen"]
-    #options:
-    build_extensions:
-      "^lib/{{}}.dart": ["lib/generated/{{}}.g.dart"]
+targets:
+  # This Target is the default target when running
+  # the build command.
+  $default:
+    builders:
+      widget_router:
+        import: "package:widget_router/_widget_router_generation.dart"
+        builder_factories: ["build"]
+        build_extensions: { "^lib/{{}}.dart": ["lib/generated/{{}}.g.dart"] }
+        auto_apply: dependents
+        build_to: cache
+        applies_builders: ["source_gen"]
+        enabled: true

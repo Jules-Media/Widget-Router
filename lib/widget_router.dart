@@ -1,7 +1,8 @@
 library widget_router;
 
-/// Import this File to access the Widget Router
-/// Package
+/// import this File to access everything you need
+/// to use and generate everything for the
+/// widget router package
 
+export 'src/route_widget.dart';
 export 'src/router.dart';
-export 'src/routes.dart';
