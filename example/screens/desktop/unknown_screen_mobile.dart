@@ -11,6 +11,8 @@ import 'package:flutter/material.dart'
         Text,
         Widget;
 
+/// Simple Mobile Screen for
+/// unknown Sites
 class UnknownScreenMobile extends StatelessWidget {
   const UnknownScreenMobile({Key? key}) : super(key: key);
 

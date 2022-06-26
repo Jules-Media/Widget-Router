@@ -5,7 +5,13 @@ library widget_router;
 /// Annotation.
 /// Only use as Annotation.
 class WidgetRouterSet {
-  /// Constant Constructor is needed for Annotations.
+  /// Annotation for creating the
+  /// Routes. Annotate your Set with this
+  /// Annotation.
+  /// Only use as Annotation.
+  ///
+  /// Has a constant Constructor 'cause this
+  /// is needed for Annotations
   const WidgetRouterSet();
 
   /// The Description for this Annotation Class.
