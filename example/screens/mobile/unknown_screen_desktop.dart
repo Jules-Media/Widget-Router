@@ -15,6 +15,7 @@ class UnknownScreenDesktop extends StatelessWidget {
     );
   }
 
+  /// Body of the Screen
   Center get _body {
     return const Center(
       child: Text('Could not find the Screen you were searching for'),
