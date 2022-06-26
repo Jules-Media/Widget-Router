@@ -9,8 +9,39 @@ class RouteWidget {
     required this.name,
     required this.routeName,
     required this.doc,
-    required this.widget,
+    required this.mobileWidget,
+    required this.desktopWidget,
   });
+
+  /// the mobile Version of the Unknown
+  /// Widget Screen
+  /// This Screen is shown, if you try to navigate to
+  /// a Screen that isn't declared in your
+  /// Widget Router class.
+  static late final Widget? mobileUnknownScreen;
+
+  /// The Desktop Version of the Unknown Widget Screen
+  /// This Screen is shown, if you try to navigate to
+  /// a Screen that isn't declared in your
+  /// Widget Router class.
+  static late final Widget? desktopUnkownScreen;
+
+  /// Set Method for both Unknwon Widget Screens.
+  /// Call this Method first, before you
+  /// do anything else with the
+  /// Widget Router Package.
+  ///
+  /// Only call this Method once.
+  /// If you call it again, nothing should happen,
+  /// but because the Widgets are final, it may cause a runtime
+  /// Error.
+  static void setUnkownScreens({
+    required Widget mobile,
+    required Widget desktop,
+  }) {
+    mobileUnknownScreen ??= mobile;
+    desktopUnkownScreen ??= desktop;
+  }
 
   /// The Name of this Widget.
   /// After running the build command,
@@ -27,12 +58,13 @@ class RouteWidget {
   /// with the Routes.$name
   final String doc;
 
-  /// The Widget or Screen
-  /// you want to navigate to.
+  /// The mobile Version
+  /// of a Widget or Screen you
+  /// want to navigate to.
   final Widget mobileWidget;
 
+  /// The Desktop Version
+  /// of a Widget or Screen you
+  /// want to navigate to.
   final Widget desktopWidget;
-
-  /// The
-  final Widget bloc;
 }

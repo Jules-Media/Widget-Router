@@ -55,6 +55,10 @@ class RoutesBuilder extends Builder {
     /// Widget to pass a route Name as String.
     /// Returns the corresponding Widget for either Mobile
     /// or Desktop Devices.
+    /// Set the [_isDesktop] Variable with the corresponding setter
+    /// isDesktop before you use this Class.
+    /// The best way to do something like this is to set the Variable
+    /// when starting your App.
     class WidgetRouter extends StatelessWidget {
       const WidgetRouter({required this.routeName Key? key}) : super(key: key);
 
@@ -81,7 +85,14 @@ class RoutesBuilder extends Builder {
     /// Whether it's an mobile or desktop OS
     static late final bool? _isDesktop;
 
-    /// Whether it's an mobile or desktop OS
+    /// Whether it's an mobile or desktop OS.
+    /// Use this Setter to set the Variable.
+    /// Only set the Variable once, which means
+    /// only call this Setter once, because the
+    /// Variable is final. Also the operating System
+    /// does not change to the runtime of an App.
+    /// So call this Method in the start, before doing anything
+    /// else.
     static set isDesktop(bool isDesktop) {
       _isDesktop ??= isDesktop;
     }
@@ -89,7 +100,7 @@ class RoutesBuilder extends Builder {
     /// Whether it's an mobile or desktop OS
     static bool get isDesktop {
       if (_isDesktop == null) {
-        throw ErrorDescription('is Desktop is null. Set it before you use it.');
+        throw 'is Desktop is null. Set it before you use it.';
       } else {
         return _isDesktop!;
       }
@@ -97,16 +108,32 @@ class RoutesBuilder extends Builder {
 
     @override
     Widget build(BuildContext context) {
-      switch (routeName) {
-        
-        default:
-          return const UnknownScreen();
-      }
+        ${_buildSwitch()}
     }
   }
   ''';
 
     return router;
+  }
+
+  String _buildSwitch() {
+    String sw = '''
+    switch (routeName) {
+      ''';
+
+    for (RouteWidget route in list) {
+      sw += '''
+        case Routes.${route.name}
+          return _isDesktop ? ${route.desktopWidget} : ${route.mobileWidget};
+            ''';
+    }
+
+    sw += '''
+      default:
+        return _isDesktop ? ${RouteWidget.desktopUnkownScreen} : ${RouteWidget.mobileUnknownScreen};
+    }''';
+
+    return sw;
   }
 
   @override
