@@ -9,25 +9,25 @@ import 'package:build/build.dart' show BuildStep;
 import 'package:source_gen/source_gen.dart'
     show ConstantReader, GeneratorForAnnotation;
 
-/// Generator for the Annotation [WidgetRouterList].
+/// Generator for the Annotation [WidgetRouterSet].
 /// This Class generates the Routes and WidgetRouter class.
-class RoutesGenerator extends GeneratorForAnnotation<WidgetRouterList> {
+class RoutesGenerator extends GeneratorForAnnotation<WidgetRouterSet> {
   @override
   String generateForAnnotatedElement(
     Element element,
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    if (element is List<RouteWidget>) {
+    if (element is Set<RouteWidget>) {
       // Do nothing
     } else {
       throw 'Only a List of RouteWidgets can be annotated with the @WidgetRouterList annotation';
     }
 
     // Make Element a List of RouteWidgets
-    final List<RouteWidget> list = element as List<RouteWidget>;
+    final Set<RouteWidget> set = element as Set<RouteWidget>;
     // Create Builder
-    final RoutesBuilder builder = RoutesBuilder(list: list);
+    final RoutesBuilder builder = RoutesBuilder(set: set);
 
     return '''
     ${builder.buildRoutes()}
@@ -40,12 +40,12 @@ class RoutesGenerator extends GeneratorForAnnotation<WidgetRouterList> {
 /// The Builder for this Package
 class RoutesBuilder extends Builder {
   // Constant Constructor with Params
-  const RoutesBuilder({required this.list});
+  const RoutesBuilder({required this.set});
 
   /// the List of all Routes.
   /// This List is the List that has
-  /// the [WidgetRouterList] annotation.
-  final List<RouteWidget> list;
+  /// the [WidgetRouterSet] annotation.
+  final Set<RouteWidget> set;
 
   @override
   String buildRouter() {
@@ -66,7 +66,7 @@ class RoutesBuilder extends Builder {
 
     // add Code for each route to the
     // router Variable
-    for (RouteWidget route in list) {
+    for (RouteWidget route in set) {
       router += '''
       /// Widget Route for the ${route.name}
       WidgetRouter.${route.name}({Key? key}) : super(key: key) {
@@ -121,7 +121,7 @@ class RoutesBuilder extends Builder {
     switch (routeName) {
       ''';
 
-    for (RouteWidget route in list) {
+    for (RouteWidget route in set) {
       sw += '''
         case Routes.${route.name}
           return _isDesktop ? ${route.desktopWidget} : ${route.mobileWidget};
@@ -150,7 +150,7 @@ class RoutesBuilder extends Builder {
 
     // add Code for each route to the
     // routes Variable
-    for (RouteWidget route in list) {
+    for (RouteWidget route in set) {
       routes += '''
       /// ${route.doc}
       static const String ${route.name} = ${route.routeName};

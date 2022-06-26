@@ -14,6 +14,17 @@ void main() {
 class ExampleApp extends StatelessWidget {
   const ExampleApp({Key? key}) : super(key: key);
 
+  @WidgetRouterSet()
+  static const Set<RouteWidget> routes = {
+    RouteWidget(
+      name: 'Homescreen',
+      routeName: '/home',
+      doc: 'The Homescreen of this App',
+      desktopWidget: Homescreen(),
+      mobileWidget: Homescreen(),
+    ),
+  };
+
   @override
   Widget build(BuildContext context) {
     RouteWidget.setUnkownScreens(
