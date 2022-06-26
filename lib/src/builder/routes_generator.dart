@@ -40,7 +40,7 @@ class RoutesGenerator extends GeneratorForAnnotation<WidgetRouterList> {
 /// The Builder for this Package
 class RoutesBuilder extends Builder {
   // Constant Constructor with Params
-  const RoutesBuilder({required this.list}) : super(list: list);
+  const RoutesBuilder({required this.list});
 
   /// the List of all Routes.
   /// This List is the List that has
@@ -141,6 +141,9 @@ class RoutesBuilder extends Builder {
     // Create Variable and add
     // first Code to it.
     String routes = '''
+    library widget_router;
+
+
     /// Contains nearly all Routes used in this App.
     class Routes {
     ''';
