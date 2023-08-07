@@ -1,24 +1,25 @@
 name: widget_router
 description: A Dart and Flutter Package to navigate in Apps that have different Screens depending on the OS
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/Jules-Media/Widget-Router
 
 environment:
-  sdk: ">=2.17.3 <3.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=3.0.6 <4.0.0"
+  flutter: ">=3.10.6"
 
 dependencies:
   flutter:
     sdk: flutter
-  build: ^2.3.0
-  source_gen: ^1.2.2
-  build_runner: ^2.1.11
-  build_config: ^1.0.0
+  build: ^2.4.1
+  source_gen: ^1.4.0
+  build_runner: ^2.4.6
+  build_config: ^1.1.1
+  analyzer: ^6.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
