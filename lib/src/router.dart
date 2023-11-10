@@ -16,7 +16,7 @@ class WidgetRouterSet {
 
   /// The Description for this Annotation Class.
   static const String description = '''
-        This is an Annotiation for Dart.
+        This is an Annotation for Dart.
         With this Annotation you can create the classes
         you need for the Widget Router Package.
         You have to create a Set of RouteWidgets

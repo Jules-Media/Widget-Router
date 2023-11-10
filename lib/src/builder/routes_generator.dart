@@ -130,7 +130,7 @@ class RoutesBuilder extends Builder {
 
     sw += '''
       default:
-        return _isDesktop ? ${RouteWidget.desktopUnkownScreen} : ${RouteWidget.mobileUnknownScreen};
+        return _isDesktop ? ${RouteWidget.desktopUnknownScreen} : ${RouteWidget.mobileUnknownScreen};
     }''';
 
     return sw;

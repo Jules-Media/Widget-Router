@@ -24,9 +24,9 @@ class RouteWidget {
   /// This Screen is shown, if you try to navigate to
   /// a Screen that isn't declared in your
   /// Widget Router class.
-  static late final Widget? desktopUnkownScreen;
+  static late final Widget? desktopUnknownScreen;
 
-  /// Set Method for both Unknwon Widget Screens.
+  /// Set Method for both Unknown Widget Screens.
   /// Call this Method first, before you
   /// do anything else with the
   /// Widget Router Package.
@@ -35,12 +35,12 @@ class RouteWidget {
   /// If you call it again, nothing should happen,
   /// but because the Widgets are final, it may cause a runtime
   /// Error.
-  static void setUnkownScreens({
+  static void setUnknownScreens({
     required Widget mobile,
     required Widget desktop,
   }) {
     mobileUnknownScreen ??= mobile;
-    desktopUnkownScreen ??= desktop;
+    desktopUnknownScreen ??= desktop;
   }
 
   /// The Name of this Widget.

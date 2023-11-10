@@ -28,7 +28,7 @@ class ExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RouteWidget.setUnkownScreens(
+    RouteWidget.setUnknownScreens(
       mobile: const UnknownScreenMobile(),
       desktop: const UnknownScreenDesktop(),
     );

@@ -9,7 +9,7 @@ abstract class Builder {
   /// and returns the File as a String
   String buildRouter();
 
-  /// Method that vuilds the Routes Class
+  /// Method that builds the Routes Class
   /// and returns it as a String.
   String buildRoutes();
 }
