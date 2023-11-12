@@ -18,9 +18,7 @@ class RoutesGenerator extends GeneratorForAnnotation<WidgetRouterSet> {
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    if (element is Set<RouteWidget>) {
-      // Do nothing
-    } else {
+    if (element is! Set<RouteWidget>) {
       throw 'Only a List of RouteWidgets can be annotated with the @WidgetRouterList annotation';
     }
 

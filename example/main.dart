@@ -13,7 +13,7 @@ void main() {
 
 /// Example App for Widget Router Pacakge
 class ExampleApp extends StatelessWidget {
-  const ExampleApp({Key? key}) : super(key: key);
+  const ExampleApp({super.key});
 
   @WidgetRouterSet()
   static const Set<RouteWidget> routes = {
