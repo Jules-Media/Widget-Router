@@ -1,12 +1,12 @@
 library widget_router;
 
 import 'package:flutter/material.dart'
-    show BuildContext, Center, Key, Scaffold, StatelessWidget, Text, Widget;
+    show BuildContext, Center, Scaffold, StatelessWidget, Text, Widget;
 
 /// Simple Desktop Screen for
 /// unknown Screens.
 class UnknownScreenDesktop extends StatelessWidget {
-  const UnknownScreenDesktop({Key? key}) : super(key: key);
+  const UnknownScreenDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -11,7 +11,7 @@ void main() {
   runApp(const ExampleApp());
 }
 
-/// Example App for Widget Router Pacakge
+/// Example App for Widget Router Package
 class ExampleApp extends StatelessWidget {
   const ExampleApp({super.key});
 

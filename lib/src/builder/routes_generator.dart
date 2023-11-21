@@ -1,5 +1,7 @@
 library widget_router;
 
+import 'dart:async';
+
 import '../router.dart';
 import '../route_widget.dart';
 import 'builder.dart';
@@ -8,6 +10,8 @@ import 'package:analyzer/dart/element/element.dart' show Element;
 import 'package:build/build.dart' show BuildStep;
 import 'package:source_gen/source_gen.dart'
     show ConstantReader, GeneratorForAnnotation;
+
+import 'package:build_resolvers/build_resolvers.dart';
 
 /// Generator for the Annotation [WidgetRouterSet].
 /// This Class generates the Routes and WidgetRouter class.
@@ -163,4 +167,13 @@ class RoutesBuilder extends Builder {
 
     return routes;
   }
+
+  @override
+  FutureOr<void> build(BuildStep buildStep) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+  @override
+  Map<String, List<String>> get buildExtensions => const {'.dart' : ['widget_router/.dart.generated']};
 }

@@ -2,7 +2,7 @@ builders:
   widget_router:
     import: "package:widget_router/widget_router_generation.dart"
     builder_factories: ["build"]
-    build_extensions: { "^lib/{{}}.dart": ["lib/generated/{{}}.g.dart"] }
+    build_extensions: { "^lib/{{}}.dart": ["lib/generated/widget_router/{{}}.g.dart"] }
     auto_apply: dependents
     build_to: cache
     applies_builders: ["source_gen"]

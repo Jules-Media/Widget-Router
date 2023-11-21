@@ -5,7 +5,6 @@ import 'package:flutter/material.dart'
         AppBar,
         BuildContext,
         Center,
-        Key,
         Scaffold,
         StatelessWidget,
         Text,
@@ -14,7 +13,7 @@ import 'package:flutter/material.dart'
 /// Simple Mobile Screen for
 /// unknown Sites
 class UnknownScreenMobile extends StatelessWidget {
-  const UnknownScreenMobile({Key? key}) : super(key: key);
+  const UnknownScreenMobile({super.key});
 
   @override
   Widget build(BuildContext context) {

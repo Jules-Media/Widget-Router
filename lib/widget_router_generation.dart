@@ -9,6 +9,7 @@ Builder build(BuilderOptions options) {
   return SharedPartBuilder(
     [RoutesGenerator()],
     'widget_router',
+    additionalOutputExtensions: const ['.router'],
     allowSyntaxErrors: false,
   );
 }
